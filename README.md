@@ -1,56 +1,42 @@
 
 ***Under construction***
 
-# Isoform-specific perturb-seq reveals alternative promoter dynamics in gene regulation and drug response
+# Single-cell Profiling Defines the Familial Immunophenotype of a Family with an Individual with Paediatric Evans Syndrome carrying a novel A20 splice-site variant
 
-## Abstract
-CRISPR-dCas9 technologies are designed to modulate gene expression. However, our findings reveal that many hits are promoter and isoform-specific. Leveraging this specificity, we developed an isoform-specific single-cell Perturb-Seq screen, showing that alternative promoters frequently compensate for targeted knockdowns and drive divergent gene expression programs at the single-cell level. Importantly, these isoform-specific effects influence drug response in breast cancer, underscoring the relevance of alternative promoters in functional genomics and drug discovery.
 
-![Visual Figure](./source/fig/VisualAbstract_vNAR_v2.png)
+![Visual Figure](./source/fig/VisualAbstract.png)
+
+
+Abstract
+Background
+Evans syndrome is a rare autoimmune disorder characterised by the co-occurrence of two of three autoimmune cytopenias. The condition is often severe, relapsing, and resistant to treatment. Although ES is associated with immune dysregulation, its genetic and molecular basis is not well defined. TNFAIP3, which encodes the anti-inflammatory regulator A20, plays a central role in limiting NF-κB–mediated immune activation. While loss-of-function variants in TNFAIP3 have been linked to autoimmunity and Evans Syndrome, the contribution of non-coding regulatory mutations to ES remains poorly understood.
+
+Objective
+This study aimed to characterise the genetic and immunological mechanisms underlying Evans syndrome in a child harbouring a previously uncharacterised TNFAIP3 splice acceptor site mutation (c.-15-2A>G) together with a heterozygous 16q23.3–q24.1 deletion encompassing MBTPS1. We further sought to define how these variants perturb immune cell function through integrated family-matched genomic and single-cell analyses.
+
+Methods
+A 4-year-old patient with severe ES underwent family-based genomic and immunologic assessment. Sanger sequencing, bioinformatic modelling, and a mini-gene splicing assay were used to evaluate the functional impact of the TNFAIP3 variant. Peripheral blood mononuclear cells from family members were analysed using flow cytometry and family-matched single-cell RNA sequencing, representing the first application of scRNA-seq to Evans Syndrome. 
+
+
+Results
+The TNFAIP3 c.-15-2A>G mutation was confirmed in three family members, including the proband and two of whom had a mild autoimmune phenotype. The proband, the only individual carrying the heterozygous 16q23.3-q24.1 deletion, presented with severe, treatment-refractory ES. Bioinformatic modelling and splicing assays demonstrated loss of canonical splicing and activation of a cryptic acceptor site 41 bp downstream in exon 2, but PBMCs from carriers showed no evidence of alternatively spliced product or nonsense-mediated decay. Flow cytometry established elevated basal CD154, PD-1, and Ki-67 expression in the proband, consistent with T-cell hyperactivation. Single-cell transcriptomics corroborated this finding by revealing shifts in cell-type composition and gene-program responses. The proband showed expansion of NK cells and CD8⁺ T cells and depletion of B and CD4⁺ T cells, and lineage-specific NF-κB pathway remodelling. The deletion of the locus, potentially, suggests a crosstalk between the unfolded protein response.  
+
+
+Conclusion
+This study identifies aberrant T-cell co-stimulatory signalling and cytotoxic skewing as key immune features of Evans Syndrome, aligning with current models that highlight T–B cell interaction and cytotoxic effector activation in autoimmune cytopenias. By linking these immune signatures to a non-coding TNFAIP3 splice variant and 16q23.3-q24.1 deletion, our single-cell data extend the recognised inborn-errors-of-immunity spectrum in pediatric ES and reveal transcriptional evidence of NF-κB dysregulation across immune lineages.
+
+
 
 
 ## Links
 Please access the website: 
 
-- https://isoform-specific-perturb-seq.readthedocs.io/en/latest/index.html
-
-Please access the raw data: 
-
-- https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14567?key=244774e5-fc31-4e23-8102-4fbd49b2ed09
+- https://evans-scrna-a20.readthedocs.io/en/latest/
   
 
+The raw dataset includes sensitive genetic information and, in accordance with ethical and privacy guidelines, is not available for public download.
 
-## Pipeline
 
-***1_Promoter_identification***
-A. Integration of RNA-seq, ChIP-seq and CAGE-seq for MCF-7 
-B. Identify the genes with ideal APU events for guide 
-C. Comparison of promoter calling against refTSS and EPD
+## Analysis
 
-***2_Guide_design***
-2.  Choosing the ideal promoter-specific guide design 
-
-***3_Analysis_Scripts***
-
-**APU_ANALYSIS** 
-Package that contains enclosed functions. 
-
-1. Run through the 10x Cellranger pipeline and velocyto for single cell RNAseq quantification and using (2) guides quantification. all found in the cellranger files folder **bash**
-2.  Guide Calling for dual guide. Use repogle method to take molecule.h5 generated by cellranger and py to run through repogle version of guide calling or use cellranger_guidecalling.ipynb for Direct Capture Perturb-Seq dual guide. Formed guide-specific lists of cells.
-3. Pseudobulk analysis.
-    A. Separation of guide-specific FASTQ files. **bash**
-    B. Whippet pseudobulk is used for transcript-specific analysis, post-UMI deduplication.  **bash**
-    C. Transcript quality control. **R**
-    D. Whippet result visualisation.
-4. Normalisation of adata object and E-distance of KD
-5. Check gene and neighbouring gene expression
-6. Create individual UMAPS per gene of interest 
-    A. UMAPs 
-    B. Rand Index score
-7. Cell phase assignment model from FUCCI-matched single cell paper (GSE146773)
-8. Differential Expression analysis.
-    A. Find the shared P1 and P2 genes. 
-    B. Check the shared P1 and P2 across protospacers with the same A/B and C/D.
-9.  CNV Score & Numbat to quantify and Velocity quantification with loom file
-10. ESR1-specific analysis from proliferation analysis to rt-qpcr
-11.  Spectra analysis and visualisation for pathway enrichment
+1. Tes
