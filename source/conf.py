@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Isoform Specific Perturb-Seq'
+project = 'Single-cell Profiling Defines the Familial Immunophenotype of a Family with an Individual with Paediatric Evans Syndrome Carrying a Novel A20 Splice-Site Variant'
 copyright = '2026, Helen King'
 author = 'Helen King'
 
