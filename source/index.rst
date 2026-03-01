@@ -1,5 +1,4 @@
 Single-cell Profiling Defines the Familial Immunophenotype of a Family with an Individual with Paediatric Evans Syndrome Carrying a Novel A20 Splice-Site Variant
-
 ============================================================================================================================================================================================================================================================
 
 .. attention::
