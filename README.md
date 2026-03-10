@@ -36,6 +36,3 @@ Please access the website:
 The raw dataset includes sensitive genetic information and, in accordance with ethical and privacy guidelines, is not available for public download.
 
 
-# Analysis
-
-1. Tes
